@@ -16,7 +16,7 @@ keep_oldresult = 4
 
 def getChapters():
     chapters = " "
-    for filename in os.listdir(chapters_folder):
+    for filename in sorted(os.listdir(chapters_folder)):
         if os.path.isfile(os.path.join(chapters_folder,filename)):
             print(filename)
             chapters += "%s/%s " % (chapters_folder, filename)
@@ -32,7 +32,7 @@ def getRemoveOldResults():
           os.remove(os.path.join(result_folder,sortedFiles[file][0]))
 
 cmd_string ="pandoc -p -f markdown \
-            --csl=resources/ieee.csl \
+			--csl=resources/ieee.csl \
             --top-level-division=chapter \
             --number-sections \
             --include-before-body=resources/startthesis.tex \
@@ -42,6 +42,7 @@ cmd_string ="pandoc -p -f markdown \
             --bibliography resources/thesis.bib \
             settings.yaml %s" % (result_folder, resultfile, getChapters())
 
+#
 
 getRemoveOldResults()
 if not os.path.exists(result_folder):

@@ -1,8 +1,13 @@
-# Lorem ipsum
+# Einleitung \label{a}
+Die Einleitung dient dazu, den Leser auf die Arbeit einzustimmen, die Aufgabenstellung in einer allgemein verständlichen Form kurz und knapp zu beschreiben und anschließend die Gliederung der Arbeit kurz zu motivieren und zu beschreiben, so dass der Leser weiß, was er in welchen Kapiteln lesen wird, bzw.~lesen kann.
 
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.   
+Die Einleitung sollte einen Umfang von anderthalb Seiten nach Möglichkeit nicht überschreiten.
 
-Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi [@kpohl]. Lorem ipsum dolor sit amet [^1]
+Hintergrund dafür ist, dass Einleitung und Zusammenfassung zusammen den Rahmen der Arbeit bilden. Dieser Rahmen muss derart verfasst sein, dass eine völlig unbeteiligte Person (z.B.~ein Abteilungsleiter in einem Unternehmen) innerhalb von höchstens 10~Minuten erfassen kann,
 
-[^1]: Ich bin eine Fußnote
+- in welchem Themengebiet sich die Arbeit bewegt,
+- was die prinzipielle Aufgabenstellung und
+- wie die prinzipielle Vorgehensweise war,
+- welche Ergebnisse erzielt wurden,
+- welche Ergebnisse erzielt wurden,
 

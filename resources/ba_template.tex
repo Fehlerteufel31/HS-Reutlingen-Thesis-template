@@ -9,11 +9,16 @@
 \usepackage{caption}
 \usepackage{chngcntr}
 \usepackage{csquotes}
+\usepackage{booktabs}
+\usepackage{theorem}			%Sätze, Beispiele und dergleichen
+\usepackage{amsmath}			%Setzen von Gleichungen und Formeln
+\usepackage{amssymb}			%Mathematische Symbole
+
 
 % in order to get rid of error: "! LaTeX Error: Environment cslreferences undefined."
 $if(csl-refs)$
 \newlength{\cslhangindent}
-\setlength{\cslhangindent}{1.5em}
+\setlength{\cslhangindent}{1em}
 \newenvironment{cslreferences}%
 {$if(csl-hanging-indent)$\setlength{\parindent}{0pt}%
 \everypar{\setlength{\hangindent}{\cslhangindent}}\ignorespaces$endif$}%
@@ -29,10 +34,10 @@ $endif$
 \MakeOuterQuote{"}
 \counterwithout{footnote}{chapter} %dont reset footnotes in new chapter
 
-\definecolor{gray75}{gray}{0.75}
-\newcommand{\titleSpace}{\hspace{0.6em}}
-\titleformat{\chapter}[hang]{\Huge\bfseries}{\chaptertitlename{} \thechapter\titleSpace\textcolor{gray75}\titleSpace}{0pt}{}
-\titlespacing*{\chapter}{0pt}{*4}{*3} % *n is an abbreviation for n ex
+%\definecolor{gray75}{gray}{0.75}
+%\newcommand{\titleSpace}{\hspace{0.6em}}
+%\titleformat{\chapter}[hang]{\Huge\bfseries}{\chaptertitlename{} \thechapter\titleSpace\textcolor{gray75}\titleSpace}{0pt}{}
+%\titlespacing*{\chapter}{0pt}{*4}{*3} % *n is an abbreviation for n ex
 
 \definecolor{mygreen}{rgb}{0,0.6,0}
 \definecolor{mygray}{rgb}{0.5,0.5,0.5}
@@ -65,6 +70,11 @@ $endif$
 \DeclareCaptionFont{white}{\color{white}}
 \DeclareCaptionFormat{listing}{\colorbox[cmyk]{0.43, 0.35, 0.35, 0.01}{\parbox{\textwidth}{\hspace{15pt}#1#2#3}}}
 \captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white, singlelinecheck=false, margin=0pt, font={bf,footnotesize}}
+
+\usepackage[pdftex,
+			colorlinks,
+			linkcolor = black,
+			citecolor = black]{hyperref}
 
 $if(fontfamily)$
 \usepackage[$fontfamilyoptions$]{$fontfamily$}
@@ -122,14 +132,16 @@ $endif$
 
 % set fancyheader after geometry change so that widht/height is good
 % fancy header/footer
-\fancyhead{}
-\fancyfoot{}
-\pagestyle{fancy}
-\renewcommand\sectionmark[1]{\markright{\thesection\ #1}}
-\renewcommand\chaptermark[1]{\markboth{ \chaptername\ \thechapter \ #1}{}}
-\fancyhead[LO,RE]{\MakeUppercase{\slshape \leftmark}}
-\fancyfoot[C]{\thepage}
-
+\pagestyle{fancyplain}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+ \renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+ \lhead[\fancyplain{}{\sl\thepage}]{\fancyplain{}{\sl\rightmark}}
+ \rhead[\fancyplain{}{\sl\leftmark}]{\fancyplain{}{\sl\thepage}}
+ \lfoot{}
+ \cfoot{}
+ \rfoot{}
+ 
+ 
 \makeatletter
 \@ifpackageloaded{hyperref}{}{%
 \ifxetex
@@ -179,22 +191,28 @@ $endfor$
   \usepackage[shorthands=off,$babel-lang$]{babel}
 \fi
 $endif$
+
 $if(listings)$
 \usepackage{listings}
 $endif$
+
 $if(lhs)$
 \lstnewenvironment{code}{\lstset{language=Haskell,basicstyle=\small\ttfamily}}{}
 $endif$
+
 $if(highlighting-macros)$
 $highlighting-macros$
 $endif$
+
 $if(verbatim-in-note)$
 \usepackage{fancyvrb}
 \VerbatimFootnotes % allows verbatim text in footnotes
 $endif$
+
 $if(tables)$
 \usepackage{longtable,booktabs}
 $endif$
+
 $if(graphics)$
 \usepackage{graphicx,grffile}
 \makeatletter
@@ -206,6 +224,7 @@ $if(graphics)$
 % using explicit options in \includegraphics[width, height, ...]{}
 \setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
 $endif$
+
 $if(links-as-notes)$
 % Make links footnotes instead of hotlinks:
 \renewcommand{\href}[2]{#2\footnote{\url{#1}}}
@@ -218,16 +237,19 @@ $endif$
 $if(indent)$
 $else$
 \setlength{\parindent}{0pt}
-\setlength{\parskip}{6pt plus 2pt minus 1pt}
+%\setlength{\parskip}{6pt plus 2pt minus 1pt}
 $endif$
-\setlength{\emergencystretch}{3em}  % prevent overfull lines
+
+%\setlength{\emergencystretch}{3em}  % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
 $if(numbersections)$
 \setcounter{secnumdepth}{5}
 $else$
 \setcounter{secnumdepth}{0}
 $endif$
+
 $if(dir)$
 \ifxetex
   % load bidi as late as possible as it modifies e.g. graphicx
@@ -249,10 +271,12 @@ $endif$
 $if(title)$
 \title{$title$$if(subtitle)$\\\vspace{0.5em}{\large $subtitle$}$endif$}
 $endif$
+
 $if(author)$
 \author{$for(author)$$author$$sep$ \and $endfor$}
 $endif$
 \date{$date$}
+
 $for(header-includes)$
 $header-includes$
 $endfor$
@@ -310,15 +334,15 @@ $if(toc)$
 \tableofcontents
 } 
 $endif$
-$if(lot)$
-\listoftables
-$endif$
+
 $if(lof)$
 \listoffigures
 $endif$
-
+$if(lot)$
+\listoftables
+$endif$
 % add rightmark to fancyhdr after lists have been inserted
-\fancyhead[LE,RO]{\slshape \rightmark}
+%\fancyhead[LE,RO]{\slshape \rightmark}
 
 % Make sure new page starts
 \cleardoublepage

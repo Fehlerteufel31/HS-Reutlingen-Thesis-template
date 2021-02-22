@@ -12,8 +12,8 @@ autorGeburtsort: Musterstadt
 autorGeburtsdatum: 01.01.1990
 prueferA: Prof. Dr. Max 
 prueferB: Prof. Dr. Moritz
-firma: HTWG Konstanz
-fakultaet: Informatik
+firma: Hochschule Reutlingen
+fakultaet: Technik
 studiengang: Angewandtes Markdown, Vertiefungsrichtung Pandoc
 
 
@@ -25,14 +25,15 @@ toc: true
 lof: true
 # list of tables
 lot: true
-documentclass: report
+documentclass: book
 pagenumberstyle_before: Roman
 pagenumberstyle_thesis: arabic
 mainfont: abc
-fontsize: 12pt
-geometry: margin=3cm,headsep=.5cm,headheight=.5cm
+fontsize: 11pt
+#geometry: margin=3cm,headsep=.5cm,headheight=.5cm
+geometry: a4paper,textwidth = 16.5cm,textheight = 25cm,inner = 2.5cm
 papersize: a4paper
-fontfamily: libertine
+fontfamily: helvet
 
 # color of reference links and online urls, uncomment if u want them to be black, or change to any color u want
 # linkcolor: black 

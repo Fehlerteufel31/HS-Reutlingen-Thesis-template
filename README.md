@@ -1,6 +1,7 @@
-# Htwg Konstanz Thesis Template
+# Hochschule Reutlingen Thesis Template
 
-Dies ist ein Template zum Schreiben der Bachelor/Masterarbeit an der Htwg Konstanz mit dem Markdown Syntax.
+Dies ist ein Template zum Schreiben der Bachelor/Masterarbeit an der Hochschule Reutlingen mit dem Markdown Syntax.
+
 
 ## Benötigte Software:
 
